@@ -1,0 +1,19 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run a one-line script
+      run: dig +short myip.opendns.com @resolver1.opendns.com
+    - name: Run a one-line script
+      run: echo eula=true>eula.txt
+    - name: Run a one-line script
+      run: wget https://launcher.mojang.com/v1/objects/852eb4bfba2d886efeb88f82bcb706099193b121/server.jar
+    - name: Run a one-line script
+      run: java -jar server.jar
