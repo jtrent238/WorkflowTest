@@ -21,10 +21,10 @@ jobs:
       with:
         java-version: 1.8
     - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Download Forge
-      run: wget http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.10-10.13.4.1448-1.7.10/forge-1.7.10-10.13.4.1448-1.7.10-src.zip && unzip forge-1.7.10-10.13.4.1448-1.7.10-src.zip
-    - name: SetupWorkspace
-      run: ./gradlew setupdecompworkspace
+      run: chmod +x *
     - name: Build with Gradle
-      run: ./gradlew build
+      run: |
+        wget http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.10-10.13.4.1448-1.7.10/forge-1.7.10-10.13.4.1448-1.7.10-src.zip,
+        unzip forge-1.7.10-10.13.4.1448-1.7.10-src.zip,
+        ./gradlew setupdecompworkspace,
+        ./gradlew build.
