@@ -5,9 +5,9 @@ name: Build Minecraft Mod with Gradle
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master , main]
   pull_request:
-    branches: [ master ]
+    branches: [ master, main]
 
 jobs:
   build:
@@ -27,6 +27,6 @@ jobs:
     - name: Build with Gradle
       run: |
         wget http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2847/forge-1.12.2-14.23.5.2847-mdk.zip
-        unzip ./forge-1.12.2-14.23.5.2847-mdk.zip
+        unzip -n ./forge-1.12.2-14.23.5.2847-mdk.zip
         ./gradlew setupdecompworkspace
         ./gradlew build
